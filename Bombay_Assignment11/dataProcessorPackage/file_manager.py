@@ -11,7 +11,7 @@
 # Citations: lecture notes, https://realpython.com/, openai.com/ChatGPT, Co-pilot
  
 # Anything else that's relevant: N/A
-#file_manager.py
+
  
 import os
 import pandas as pd
@@ -23,7 +23,7 @@ class FileHandler:
     """
  
     def __init__(self):
-        # Dynamically construct the absolute path to the Data folder
+        
         self.data_dir = os.path.join(os.path.dirname(os.path.dirname(__file__)), 'Data')
  
     def load_csv(self, filename):

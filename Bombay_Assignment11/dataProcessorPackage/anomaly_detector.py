@@ -11,7 +11,6 @@
 # Citations:  lecture notes, https://realpython.com/, openai.com/ChatGPT, Co-pilot
  
 # Anything else that's relevant: N/A
-#anomaly_detector.py
  
 import pandas as pd
 import os
@@ -22,12 +21,12 @@ class AnomalyDetector:
         self.anomalies_file = anomalies_file
  
     def detect_anomalies(self):
-        # Standardize and identify rows where Fuel Type is "Pepsi"
+        
         anomalies = self.dataframe[self.dataframe['Fuel Type'].str.strip().str.lower() == 'pepsi']
-        # Exclude those rows from the original dataset
+        
         cleaned_data = self.dataframe[self.dataframe['Fuel Type'].str.strip().str.lower() != 'pepsi']
  
-        # Save anomalies to a separate CSV file
+        
         os.makedirs("Data", exist_ok=True)
         anomalies.to_csv(os.path.join("Data", self.anomalies_file), index=False)
  
